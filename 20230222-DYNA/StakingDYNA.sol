@@ -93,7 +93,7 @@ contract StakingDYNA is Ownable {
                 : stakeDetail.firstStakeAt;
             stakeDetail.lastProcessAt = block.timestamp;
         } else {
-            stakeDetail.principal = stakeDetail.principal.add(_stakeAmount);
+            stakeDetail.principal = stakeDetail.principal.add(_stakeAmount); // there not update lastProcessAt;
         }
 
         emit Deposit(msg.sender, _stakeAmount);
