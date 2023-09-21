@@ -1,0 +1,27 @@
+# 20230207-CowSwap
+
+交易哈希：0x90b468608fbcc7faef46502b198471311baca3baab49242a4a85b73d4924379b、0x92f906bce94bab417cccc87ae046448d7fb8c2c0350b7ed911545577acb3bfc1
+
+攻击者地址1：0x55a37a2e5e5973510ac9d9c723aec213fa161919
+
+攻击者地址2:0xeb8f71a5669a55cf90e384c77e74c4bdf9ae7754
+
+漏洞合约地址：0xcd07a7695e3372acd2b2077557de93e667b92bd8
+
+
+
+## 攻击流程分析
+
+1.攻击者调用Cow Protocol的settle，该函数会调用approve，允许swapGuard操作当前合约dai金额115792089237316195423570985008687907853269984665640564039457584007913129639935
+
+2.攻击者通过swapGuard合约的envelope漏洞调用transferFrom
+
+
+
+## 合约分析
+
+![image-20230921133208459](https://pic.gksec.com/20230921/650bd55936e51.png)
+
+## 出现问题及原因
+
+由于对项目的不熟悉，这一块业务目前还不清楚
